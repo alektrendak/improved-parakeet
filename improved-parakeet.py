@@ -46,7 +46,7 @@ def run(code):
             case "-":
                 tape[address_pointer] -= 1
             case ".":
-                print(chr(tape[address_pointer]))
+                print(chr(tape[address_pointer]), end="")
             case ",":
                 tape[address_pointer] = ord(input())
             case "[":
