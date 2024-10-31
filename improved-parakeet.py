@@ -48,7 +48,11 @@ def run(code):
             case ".":
                 print(chr(tape[address_pointer]), end="")
             case ",":
-                tape[address_pointer] = ord(input())
+                next_char = sys.stdin.read(1)
+                if next_char:
+                    tape[address_pointer] = ord(next_char)
+                else:
+                    tape[address_pointer] = 0
             case "[":
                 if tape[address_pointer] == 0:
                     program_pointer = bracket_map[program_pointer]
